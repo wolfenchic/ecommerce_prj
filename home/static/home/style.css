@@ -32,7 +32,7 @@ h1{
     font-size: 2rem;
 }
 
-h3 {
+h4 {
     color: #4EC5C1;
 }
 
@@ -54,4 +54,23 @@ p {
 .btn-default {
     font-size: 1.5rem;
     background: #6EC1C8;
+}
+
+.btn-warning {
+    background: #4EC5C1;
+    border-color: #4EC5C1;
+}
+
+.card-block {
+    text-align: center;
+}
+
+.card {
+    padding: 20px 10px 20px 10px;
+    padding-bottom: 40px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.50), 0 6px 60px 0 rgba(0, 0, 0, 0.50);
+}
+
+.cardPostPublish {
+    font-size: 1.5rem;
 }

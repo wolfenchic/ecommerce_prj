@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <br>
+    <div class="row">
+    <button class="btn btn-default pull-right " onclick="location.href='{% url 'products' %}'">Add a Product</button>
+    </div>
+    <br>
+    {% for product in products %}
+    <div class="container-fluid">
+        <div class="row cardRow">
+        <div class="col-lg-3 col-sm-4 col-xs-10 text-left">
+            <div class="card">
+                    <img class="card-img-top" src="{{ MEDIA_URL }}{{product.image}}" width="100%"; height="200px"/>
+                    <!--<div class="card-block p-4">-->
+                    <h4 class="cardTitle">{{ product.name }}</h4>
+                    <p class="cardPostPublish">{{ product.description |truncatewords:10 }} <br> <strong>Price</strong> {{ product.price }}</p>
+                    <a href="#" class="btn btn-warning">View</a>
+                    </div>
+                      <br>
+                    </div>
+                  
+                    
+
+    {% endfor %}
+{% endblock %}
