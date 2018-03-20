@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import Product
+from .forms import ProductForm
 
 # Create your views here.
 def get_product_page(request):
