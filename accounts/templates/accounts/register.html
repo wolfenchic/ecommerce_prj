@@ -2,6 +2,7 @@
 {% load bootstrap_tags %}
 {% block content %}
     <form role="form" method="post">
+        <br>
         <legend>Create a new account</legend>
         {% csrf_token %}
         {{ form | as_bootstrap }}
