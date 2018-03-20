@@ -1,0 +1,52 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+    padding-top: 50px;
+    background-color: white;
+}
+
+
+footer {
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-top: 1px solid #ededed;
+    color: #A9A9A9;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+.accountform {
+    padding-top: 20px;
+}
+
+h1{
+    color: #AE8EC0;
+}
+
+.navbar {
+    background-image: none;
+    background-color:  #AE8EC0;
+    border-bottom-color: #AE8EC0;
+    font-size: 2rem;
+}
+
+h3 {
+    color: #6EC1C8;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.alert {
+    background-color: #6EC1C8;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.navbar-brand {
+    font-size: 3rem;
+}
