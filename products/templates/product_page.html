@@ -2,10 +2,7 @@
 
 {% block content %}
   <br>
-    <div class="row">
-    <button class="btn btn-default pull-right " onclick="location.href='{% url 'products' %}'">Add a Product</button>
-    </div>
-    <br>
+  <br>
     {% for product in products %}
     <div class="container-fluid">
         <div class="row cardRow">
@@ -19,8 +16,6 @@
                     </div>
                       <br>
                     </div>
-                  
-                    
-
+     
     {% endfor %}
 {% endblock %}

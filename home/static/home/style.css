@@ -158,6 +158,14 @@ p {
 .product-title, .rating, .product-description, .price, .vote, .sizes {
   margin-bottom: 15px; }
 
+.product-description {
+  font-size: 1.5rem;
+}
+
+.sizes {
+  color: black;
+}
+
 .product-title {
   margin-top: 0; }
 
@@ -225,3 +233,6 @@ p {
     opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1); } }
+            
+
+

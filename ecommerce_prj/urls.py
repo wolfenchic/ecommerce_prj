@@ -15,17 +15,19 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from home.views import get_home_page
+from products.views import get_product_page
 from products.views import get_product_page
 from accounts import urls as accounts_urls
 from products import urls as products_urls
+from cart import urls as cart_urls
 from django.views.static import serve
 from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', get_home_page, name='home'),
+    url(r'^$', get_product_page, name='home'),
     url(r'^accounts/', include(accounts_urls)),
     url(r'^products/', include(products_urls)),
-     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
+    url(r'^cart/', include(cart_urls)),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
 ]
