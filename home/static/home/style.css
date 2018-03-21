@@ -189,7 +189,13 @@ p {
   background: black;
   padding: 1.2em 1.5em;
   border: none;
-  text-transform: UPPERCASE;
+  font-weight: bold;
+  color: #fff;
+}
+
+.delete_cart_item, .viewProduct {
+  background: black;
+  border: none;
   font-weight: bold;
   color: #fff;
 }
@@ -217,8 +223,8 @@ p {
           
 .cartWelcome{
   color: black;
-  margin-left: 150px;
   margin-top: 50px;
+  text-align: center;
 }
 
 .table thead th { 

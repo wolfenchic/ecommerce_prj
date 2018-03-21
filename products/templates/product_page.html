@@ -12,7 +12,7 @@
                     <!--<div class="card-block p-4">-->
                     <h4 class="cardTitle">{{ product.name }}</h4>
                     <p class="cardPostPublish">{{ product.description |truncatewords:10 }} <br> <strong>Price</strong> {{ product.price }}</p>
-                    <a href="#" class="btn btn-warning" onclick="location.href='{% url 'product_detail' product.id %}'">View</a>
+                    <a href="#" class="btn btn-default viewProduct" onclick="location.href='{% url 'product_detail' product.id %}'">View</a>
                     </div>
                       <br>
                     </div>

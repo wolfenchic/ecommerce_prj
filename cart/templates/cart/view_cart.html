@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 {% if user.is_authenticated %}
-<h3 class="cartWelcome">Hi {{ user.get_username }},<br> Welcome to your basket <i class="fa fa-heart"></i></h3>
+<h3 class="cartWelcome">Hi {{ user.get_username }}, welcome to your basket <br> <i class="fa fa-heart"></i></h3>
+
 {% endif %}
 <br>
 <div class="container">
@@ -28,7 +29,10 @@
             <td>{{ item.name }}</td>    
             <td>{{ item.quantity}}</td>    
             <td>€{{ item.price }}.00</td>
-            <td>€{{ item.total}}.00</td>    
+            <td>€{{ item.total}}.00</td> 
+            <td><form action = "{% url 'delete_cart_item' item.product_id %}" method='post'>
+							{% csrf_token %}
+							<input class="btn btn-default delete_cart_item" type="submit" value="Delete"/></td>
         </tr>
         {% endfor %}
 
@@ -45,7 +49,7 @@
             <td></td>
             <td></td>
             <td><button type="button" class="continueShopping btn btn-default" onclick="location.href='{% url 'products' %}'">Continue Shopping</button></td>
-            <td><button ahref="" type="button" class="checkout btn btn-default">Checkout</button></td>
+            <td><button ahref="#" type="button" class="checkout btn btn-default">Checkout</button></td>
         </tr>
 
     </tbody>
