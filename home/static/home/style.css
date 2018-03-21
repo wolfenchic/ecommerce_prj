@@ -22,7 +22,7 @@ p {
 }
 
 h1{
-    color: #ec576b;
+    color: black;
 }
 
 .navbar {
@@ -185,7 +185,7 @@ p {
   .color:first-of-type {
     margin-left: 20px; }
 
-.add-to-cart, .like {
+.add-to-cart, .like, .continueShopping, .checkout {
   background: black;
   padding: 1.2em 1.5em;
   border: none;
@@ -214,25 +214,18 @@ p {
 .tooltip-inner {
   padding: 1.3em; }
 
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
+          
+.cartWelcome{
+  color: black;
+  margin-left: 150px;
+  margin-top: 50px;
+}
 
-@keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-            
-
-
+.table thead th { 
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-bottom: 100px;
+ 
+}
