@@ -19,6 +19,7 @@ from products.views import get_product_page
 from products.views import get_product_page
 from accounts import urls as accounts_urls
 from products import urls as products_urls
+from reviews import urls as urls_reviews
 from cart import urls as cart_urls
 from django.views.static import serve
 from django.conf import settings
@@ -28,6 +29,7 @@ urlpatterns = [
     url(r'^$', get_product_page, name='home'),
     url(r'^accounts/', include(accounts_urls)),
     url(r'^products/', include(products_urls)),
+    url(r'^reviews/', include(urls_reviews)),
     url(r'^cart/', include(cart_urls)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
 ]
