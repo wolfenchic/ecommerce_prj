@@ -85,6 +85,20 @@ p {
 .reviewForm {
   padding-top: 100px;
 }
+
+.fa-quote-left {
+  color: black;
+}
+
+.reviewHeading {
+  color: black;
+}
+
+.productReviewRating {
+  color: black;
+  font-weight: bold
+}
+
 .preview {
   display: -webkit-box;
   display: -webkit-flex;
