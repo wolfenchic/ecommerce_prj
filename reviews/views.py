@@ -17,4 +17,4 @@ def add_a_review(request):
         review.reviewer = request.user
         review.product = product
         review.save()
-        return redirect(reverse('product_item', args=(product_id,)))
+        return redirect(reverse('product_detail', args=(product_id,)))

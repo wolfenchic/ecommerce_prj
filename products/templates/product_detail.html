@@ -61,22 +61,31 @@
 				</div>
 				</div>
 				</div>
-				
-						<div class="container">
-							<div class="row">
-							
-						
-              <h4>Product Reviews</h4>
-              {% for review in product.reviews_received.all %}
-              <p class="product-description">{{review.content}}</p>
-              <p class="product-description">Rating {{review.rating}}</small></p>
-              <p class="product-description text-muted">Posted by {{review.reviewer.username}}</small></p>
-              <hr>
-              {%endfor%}
-              </div>
-              </div>
-              
-              
+				<br>
+
+<div class="row">
+  <h4 class="reviewHeading">Reviews</h4>
+  </div>
+
+	 {% for review in product.reviews_received.all %}
+	 
+    <div class="container-fluid">
+        <div class="row cardRow">
+        <div class="col-lg-4 col-sm-4 col-xs-10 text-center">
+        <div class="card reviewCard">
+                    <h4 class="product-description">Posted by {{review.reviewer.username}}</h4>
+                    <p class="product-description"><i class="fa fa-quote-left fa-2x"></i> {{review.content}}</p>
+                    <p class="product-description">Rating {{review.rating}}</p>
+                    </div>
+                    <br>
+                  </div>
+ {%endfor%}
+<br>
+<br>
+<div class="container-fluid">
+        <div class="row reviewForm">
+        <div class="col-lg-12 col-sm-4 col-xs-10 text-center">
+<h4>Leave a review</h4>
               <form method="post" action="{% url 'add_a_review' %}">
                 {% csrf_token %}
                 
@@ -86,12 +95,10 @@
                 <input type="submit" class="btn btn-success" value="Leave Review"/>
               </form>
           </div>
+          </div>
+          </div>
+		
 		</div>
-  
 			</div>
-				
-              				
-					
-	
-	
+
 {% endblock %}
