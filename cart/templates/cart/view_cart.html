@@ -1,29 +1,13 @@
 {% extends "base.html" %}
+
 {% block content %}
+
 {% if user.is_authenticated %}
 <h3 class="cartWelcome">Hi {{ user.get_username }}, welcome to your basket <br> <i class="fa fa-heart"></i></h3>
-
 {% endif %}
 
-
 {% include 'cart/_show_cart.html' %}
-<div class="row">
-<div class="col-md-12">
-<div class="table-responsive">
-<table class="table">
 
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><button type="button" class="continueShopping btn btn-default" onclick="location.href='{% url 'products' %}'">Continue Shopping</button></td>
-            <td><a href="{% url 'checkout' %}" type="button" class="checkout btn btn-default" role="button">Checkout</a></td>
-        </tr>
-    
-</table>
-</div>
-</div>
-</div>
+<a href="{% url 'checkout' %}" type="button" class="checkout btn btn-default" role="button">Checkout</a>
 
 {% endblock content %}

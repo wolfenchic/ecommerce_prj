@@ -7,10 +7,17 @@ from cart.utils import get_cart_items_and_total
 from django.utils import timezone
 from .models import OrderLineItem
 from django.conf import settings
+import stripe
+from django.contrib import messages
+from cart.utils import get_cart_items_and_total
 
+stripe.api_key = settings.STRIPE_SECRET
 # Create your views here.
 def checkout(request):
+    print("**** Enter checkout ***")
+    print(request.method)
     if request.method=="POST":
+        print("you are posting - great")
         # Save The Order
         order_form = OrderForm(request.POST)
         order = order_form.save(commit=False)
@@ -27,13 +34,34 @@ def checkout(request):
                 quantity = quantity
                 )
             order_line_item.save()
-        
+        print("did cart stuff")
         
         # Charge the Card
-        
+        payment_form = MakePaymentForm(request.POST)
+        print("*** CHECK PAYMENT IS VALID ***")
+        if payment_form.is_valid():
+            # total = get_cart_items_and_total(cart)['total']
+            # total_in_cent = int(total*100)
+            print("PAYMENT VALID")
+            try:
+                customer = stripe.Charge.create(
+                   amount=100,
+                   currency="EUR",
+                   description="Dummy Transaction",
+                   card=payment_form.cleaned_data['stripe_id'],
+                )
+                if customer.paid:
+                    messages.error(request, "You have successfully paid")
+            
+            except stripe.error.CardError:
+               messages.error(request, "Your card was declined!")
+               
+            del request.session['cart']
+
+                
         
         #Clear the Cart
-        del request.session['cart']
+        
         return redirect("home")
     else:
         order_form = OrderForm()

@@ -10,10 +10,8 @@ class Product(models.Model):
 
     @property
     def average_rating(self):
-        if self.reviews_received.all():
-            average = self.reviews_received.all().aggregate(Avg('rating'))
-            return int(average['rating__avg'])
-        else: return 0
+        average = self.reviews_received.all().aggregate(Avg('rating'))
+        return average['rating__avg'])
 
     @property
     def stars(self):
@@ -22,3 +20,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+

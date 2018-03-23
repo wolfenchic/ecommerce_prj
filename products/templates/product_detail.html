@@ -30,9 +30,14 @@
 						<h3 class="product-title">{{ product.name }}</h3>
 						<p class="price">Price: €{{ product.price }}<p>
               			<span class="text-warning">
+              				
+              				{% if product.stars %}
               				{% for star in product.stars %}
                				&#9733;
                				{% endfor %}
+               				{% else %}
+               				<p>No reviews yet</p>
+               			{% endif%}
               			</span>
 						<br>
 						<br>
