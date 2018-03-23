@@ -29,20 +29,12 @@
 					   <br>
 						<h3 class="product-title">{{ product.name }}</h3>
 						<p class="price">Price: €{{ product.price }}<p>
-						<p class="card-text">{{product.description}}</p>
               			<span class="text-warning">
               				{% for star in product.stars %}
                				&#9733;
                				{% endfor %}
               			</span>
-						<!--<div class="rating">-->
-						<!--	<div class="stars">-->
-						<!--		<span class="fa fa-star checked"></span>-->
-						<!--		<span class="fa fa-star checked"></span>-->
-						<!--		<span class="fa fa-star checked"></span>-->
-						<!--		<span class="fa fa-star"></span>-->
-						<!--		<span class="fa fa-star"></span>-->
-						<!--	</div>-->
+						<br>
 						<br>
 						<p class="product-description">{{ product.description }}.</p>
 						<br>
