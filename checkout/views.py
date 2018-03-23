@@ -38,26 +38,19 @@ def checkout(request):
         
         # Charge the Card
         payment_form = MakePaymentForm(request.POST)
-        print("*** CHECK PAYMENT IS VALID ***")
         if payment_form.is_valid():
-            # total = get_cart_items_and_total(cart)['total']
-            # total_in_cent = int(total*100)
-            print("PAYMENT VALID")
-            try:
-                customer = stripe.Charge.create(
-                   amount=100,
+           try:
+               customer = stripe.Charge.create(
+                   amount= int(1 * 100),
                    currency="EUR",
                    description="Dummy Transaction",
                    card=payment_form.cleaned_data['stripe_id'],
-                )
-                if customer.paid:
-                    messages.error(request, "You have successfully paid")
-            
-            except stripe.error.CardError:
+               )
+           except stripe.error.CardError:
                messages.error(request, "Your card was declined!")
-               
-            del request.session['cart']
 
+           if customer.paid:
+               messages.error(request, "You have successfully paid")
                 
         
         #Clear the Cart

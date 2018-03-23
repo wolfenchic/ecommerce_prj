@@ -14,3 +14,10 @@ def product_detail(request, id):
     product = get_object_or_404(Product, pk=id)
     form = ReviewForm()
     return render(request, "product_detail.html", {'product': product,  'review_form': form })
+
+
+def search_products(request):
+    match = request.GET.get('match')
+    products = Product.objects.filter(name__icontains=request.GET['query'])
+    return render(request, "product_page.html", {"products": products})
+  
